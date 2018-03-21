@@ -48,6 +48,7 @@ $app = require_once __DIR__.'/../bootstrap/app.php';
 */
 
 $kernel = $app->make(Illuminate\Contracts\Http\Kernel::class);
+$GLOBALS['_SERVER']['REQUEST_URI'] = strtolower($GLOBALS['_SERVER']['REQUEST_URI']);
 
 $response = $kernel->handle(
     $request = Illuminate\Http\Request::capture()

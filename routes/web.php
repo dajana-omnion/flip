@@ -31,7 +31,7 @@ Route::get('/home', function () {
 Route::post('/ceklogin','Login\loginCtrl@checkLogin')->name('login.check');
 
 //
-Route::group(['middleware' => ['auth'],'prefix' => 'admin','namespace' => 'admin'], function () {
+Route::group(['middleware' => ['auth'],'prefix' => 'Admin','namespace' => 'Admin'], function () {
     Route::get('/','DashboardCtrl@index')->name('dashboard.index');
     
     Route::get('checkin/tamu','CheckinCtrl@listCheckin')->name('checkin.tamu');

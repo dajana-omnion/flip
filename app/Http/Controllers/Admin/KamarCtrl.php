@@ -28,7 +28,7 @@ class KamarCtrl extends Controller
         $this->data['title'] = 'Rooms';
         $this->data['deskripsi_title'] = 'Hotel Rooms administration';
         $this->data['kamar_type'] = kamarType::pluck('nama','id');
-        return view('backend.kamar',$this->data);
+        return view('backend.laporan.kamar',$this->data);
     }
 
     public function getKamar(Request $request){

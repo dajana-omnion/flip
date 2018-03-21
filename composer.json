@@ -42,7 +42,7 @@
         "post-update-cmd": [
             "Illuminate\\Foundation\\ComposerScripts::postUpdate",
             "php artisan optimize",
-            "php artisan config:cache"
+            "php artisan config:clear"
         ]
     },
     "config": {

@@ -15,7 +15,7 @@ class LaporanCtrl extends Controller
     //
     public function laporan($type)
     {
-    	$this->data['title'] = 'Transaction Report '.$type;
+    	$this->data['title'] = 'Transaction Report ';
     	$this->data['deskripsi_title'] = '';
     	return view('backend.laporan.kamar',$this->data);
     }

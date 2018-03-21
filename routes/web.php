@@ -23,8 +23,8 @@ Route::get('/logout',function(){
 
 Route::get('/home', function () {
 	//factory(App\Model\userRole::class)->create();
-    $data['title'] = 'Hotel Vue';
-    $data['deskripsi_title'] = 'Sistem Informasi Hotel';
+    $data['title'] = 'Omni Hotel';
+    $data['deskripsi_title'] = 'Hotel management system';
     return view('backend.dashboard',$data);
 })->middleware('auth')->name('home');
 
@@ -56,9 +56,9 @@ Route::group(['middleware' => ['auth'],'prefix' => 'Admin','namespace' => 'Admin
     Route::get('laporan/{type}','LaporanCtrl@laporan')->name('laporan')->middleware('role');
 });
 
-Route::group(['middleware' => 'auth','prefix' => 'api','namespace' => 'admin'], function () {
+Route::group(['middleware' => 'auth','prefix' => 'api','namespace' => 'Admin'], function () {
 	Route::get('kamar','KamarCtrl@getKamar')->name('api.kamar');
-    Route::get('typekamar','TypeKamarCtrl@getTypeKamar')->name('api.typekamar');
+    Route::get('typekamar','typeKamarCtrl@getTypeKamar')->name('api.typekamar');
     Route::get('kategorilayanan','layananKategoriCtrl@getLayananKategori')->name('api.layanankategori');
 	Route::get('layanan','LayananCtrl@getLayanan')->name('api.layanan');
     Route::get('tamu','TamuCtrl@getTamu')->name('api.tamu');

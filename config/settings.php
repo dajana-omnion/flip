@@ -2,6 +2,6 @@
 
 
 return [
-	'perusahaan' => '1',
+	'perusahaan' => App\Model\Perusahaan::class,
 	'setting' => ''
 ];

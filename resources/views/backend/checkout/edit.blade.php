@@ -79,7 +79,7 @@
 						<td>Room reserved type : {{$transaksi->kamar->typekamar->nama}} ROOM</td>
 						<td class="pull-right">{{$transaksi->kamar->typekamar->harga_malam_format}}</td>
 						<td class="text-center">{{$jumlah_hari ? $jumlah_hari : 1}} day</td>
-						<td class="pull-right">Eur. {{number_format($transaksi->kamar->typekamar->harga_malam * ($jumlah_hari ? $jumlah_hari : 1),2)}}</td>
+						<td class="pull-right">Eur {{number_format($transaksi->kamar->typekamar->harga_malam * ($jumlah_hari ? $jumlah_hari : 1),2)}}</td>
 						<?php $sub_total = $transaksi->kamar->typekamar->harga_malam * ($jumlah_hari ? $jumlah_hari : 1); ?>
 					</tr>
 					@foreach($layanan as $service)
@@ -94,7 +94,7 @@
 					<tr>
 						<td rowspan="4"></td>
 						<td colspan="2"><b>Sub-Total</b></td>
-						<td class="pull-right"><b>Rp. {{number_format($sub_total,2)}}</b></td>
+						<td class="pull-right"><b>Eur {{number_format($sub_total,2)}}</b></td>
 					</tr>
 					<tr>							
 						<td colspan="2">Tax 23%</td>

@@ -33,7 +33,7 @@
               	<table class="table table-striped table-hover">
 					<thead>
 						<tr>
-							<th>Product / Layanan</th>
+							<th>Product / Service</th>
 							<th>Price</th>
 							<th>Number of orders</th>
 						</tr>

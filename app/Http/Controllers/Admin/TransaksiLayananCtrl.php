@@ -37,8 +37,8 @@ class TransaksiLayananCtrl extends Controller
     public function create()
     {
         //
-        $this->data['title'] = 'Pembersihan Kamar';
-        $this->data['deskripsi_title'] = 'Administrasi pembersihan kamar';
+        $this->data['title'] = 'Room cleaning';
+        $this->data['deskripsi_title'] = 'Room cleaning administration';
         return view('backend.layanan.bersih',$this->data);
     }
 
@@ -91,7 +91,7 @@ class TransaksiLayananCtrl extends Controller
     {
         //
         $this->data['title'] = 'Room Services';
-        $this->data['deskripsi_title'] = 'Pilih produk / layanan';
+        $this->data['deskripsi_title'] = 'Select product / service';
         $this->data['guest'] = TransaksiKamar::with('kamar','tamu')->find($id);
         $this->data['layanan'] = layananKategori::all();
         return view('backend.layanan.edit',$this->data);

@@ -39,9 +39,9 @@ Route::group(['middleware' => ['auth'],'prefix' => 'Admin','namespace' => 'Admin
     Route::resource('kamar','KamarCtrl');
     Route::resource('typekamar','TypeKamarCtrl');
     Route::resource('kategorilayanan','layananKategoriCtrl');
-    Route::resource('layanan','layananCtrl');
-    Route::resource('tamu','tamuCtrl');
-    Route::resource('user','userCtrl');
+    Route::resource('layanan','LayananCtrl');
+    Route::resource('tamu','TamuCtrl');
+    Route::resource('user','UserCtrl');
     Route::resource('perusahaan','PerusahaanCtrl');
     Route::resource('checkin','CheckinCtrl');
     Route::resource('transaksilayanan','TransaksiLayananCtrl');
@@ -60,9 +60,9 @@ Route::group(['middleware' => 'auth','prefix' => 'api','namespace' => 'admin'], 
 	Route::get('kamar','KamarCtrl@getKamar')->name('api.kamar');
     Route::get('typekamar','TypeKamarCtrl@getTypeKamar')->name('api.typekamar');
     Route::get('kategorilayanan','layananKategoriCtrl@getLayananKategori')->name('api.layanankategori');
-	Route::get('layanan','layananCtrl@getLayanan')->name('api.layanan');
-    Route::get('tamu','tamuCtrl@getTamu')->name('api.tamu');
-    Route::get('user','userCtrl@getUser')->name('api.user');
+	Route::get('layanan','LayananCtrl@getLayanan')->name('api.layanan');
+    Route::get('tamu','TamuCtrl@getTamu')->name('api.tamu');
+    Route::get('user','UserCtrl@getUser')->name('api.user');
     Route::get('berita','BeritaCtrl@getBerita')->name('api.berita');
 
     Route::get('getlayanan/{id}','TransaksiLayananCtrl@getLayanan')->name('api.transaksilayanan');

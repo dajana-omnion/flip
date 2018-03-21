@@ -34,12 +34,12 @@ class LaporanCtrl extends Controller
 	/*    	                echo "<pre>".print_r(
 	            DB::getQueryLog()
 	        ,true)."</pre>";*/
-	    	$data['total'] = 'Rp. '.number_format($data['laporan']->sum('total_biaya'),2);
+	    	$data['total'] = 'Eur '.number_format($data['laporan']->sum('total_biaya'),2);
     	} else {
     		$data['laporan'] = TransaksiLayanan::whereHas('transaksikamar')->whereBetween('created_at',[$tgl_awal,$tgl_akhir])->with(['transaksikamar' => function($q) {
     				$q->with('kamar');
     		}])->with('layanan','user')->get();
-    		$data['total'] = 'Rp. '.number_format($data['laporan']->sum('total'),2);
+    		$data['total'] = 'Eur '.number_format($data['laporan']->sum('total'),2);
     	}
     	return response()->json($data);
     }

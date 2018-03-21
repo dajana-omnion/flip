@@ -16,6 +16,6 @@ class Layanan extends Model
     }
 
     public function getHargaFormatAttribute($value){
-    	return 'Rp. '.number_format($this->attributes['harga'],2);
+    	return 'Eur '.number_format($this->attributes['harga'],2);
     }
 }

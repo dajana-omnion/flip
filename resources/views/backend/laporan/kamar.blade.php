@@ -9,13 +9,13 @@
 		<div class="row">
 			<div class="col-sm-3">
 				<div class="form-group">
-					<input id="tgl_awal" data-date-format="yyyy-mm-dd" class="form-control" name="tanggal-start" placeholder="Dari Tanggal" v-model="dataInput.tgl_awal">
+					<input id="tgl_awal" data-date-format="yyyy-mm-dd" class="form-control" name="tanggal-start" placeholder="From Date" v-model="dataInput.tgl_awal">
 					<span v-if="errorForm['tgl_awal']" class="error text-danger">@{{ errorForm['tgl_awal'] }}</span>
 				</div>
 			</div>
 			<div class="col-sm-3">
 				<div class="form-group">
-					<input id="tgl_akhir" data-date-format="yyyy-mm-dd" class="form-control" name="tanggal-end" placeholder="Sampai Tanggal" v-model="dataInput.tgl_akhir">
+					<input id="tgl_akhir" data-date-format="yyyy-mm-dd" class="form-control" name="tanggal-end" placeholder="To Date" v-model="dataInput.tgl_akhir">
 					<span v-if="errorForm['tgl_akhir']" class="error text-danger">@{{ errorForm['tgl_akhir'] }}</span>
 				</div>
 			</div>

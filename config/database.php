@@ -41,11 +41,11 @@ return [
 
         'mysql' => [
             'driver' => 'mysql',
-            'host' => env('DB_HOST', '0ff55ad9-76ae-4781-bd10-a7e7a88d72d7.omni-hotel-1162.mysql.dbs.scalingo.com'),
-            'port' => env('DB_PORT', '31447'),
-            'database' => env('DB_DATABASE', 'omni_hotel_1162'),
-            'username' => env('DB_USERNAME', 'omni_hotel_1162'),
-            'password' => env('DB_PASSWORD', 'odBrd1qTfa7yiYJl9QZ9'),
+            'host' => env('DB_HOST', '127.0.0.1'),
+            'port' => env('DB_PORT', '3306'),
+            'database' => env('DB_DATABASE', 'forge'),
+            'username' => env('DB_USERNAME', 'forge'),
+            'password' => env('DB_PASSWORD', ''),
             'charset' => 'utf8mb4',
             'collation' => 'utf8mb4_unicode_ci',
             'prefix' => '',

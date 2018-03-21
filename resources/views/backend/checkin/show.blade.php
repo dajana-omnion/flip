@@ -16,17 +16,17 @@
 						<input class="form-control" name="invoice_id" value="{{$transaksi->invoice_id}}" v-model="dataInput.invoice_id" readonly>
 					</div>
 					<div class="alert alert-info">
-						<h4>STANDART</h4>
+						<h4>STANDARD</h4>
 						<ul class="list-unstyled">
-							<li>Harga / Malam : <b>{{$transaksi->kamar->typekamar->harga_malam_format}}</b></li>
-							<li>Maximal Orang Dewasa : <b>{{$transaksi->kamar->max_dewasa}} Orang</b></li>
-							<li>Maximal Anak-anak : <b>{{$transaksi->kamar->max_anak}} Orang</b></li>
+							<li>Price / Night : <b>{{$transaksi->kamar->typekamar->harga_malam_format}}</b></li>
+							<li>Max adults: <b>{{$transaksi->kamar->max_dewasa}} person(s)</b></li>
+							<li>Max children : <b>{{$transaksi->kamar->max_anak}} persons(s)</b></li>
 						</ul>
 					</div>
 				</div>
 				<div class="col-sm-3">
 					<div class="form-group">
-						<label>Nama Tamu</label>
+						<label>Guest</label>
 						<select class="form-control nama_tamu" name="tamu_id" v-model="dataInput.tamu_id">
 							<option selected="selected" value="0">--Pilih--</option>
 							@foreach($tamu as $key => $guest)
@@ -35,7 +35,7 @@
 						</select>
 					</div>
 					<div class="well">
-						<a href="{{route('tamu.index')}}"><b>Klik disini</b></a> jika nama tamu yang dimaksud tidak ditemukan untuk ditambah pada daftar buku tamu.
+						<a href="{{route('tamu.index')}}"><b>Click here</b></a> if the guest name is not found to add them to the guestbook list.
 					</div>
 				</div>
 				<div class="col-sm-5">
@@ -44,24 +44,24 @@
 						<div class="row">
 							<div class="col-sm-6">
 								<select class="form-control" name="jumlah_dewasa" v-model="dataInput.jumlah_dewasa">
-									<option value="0">- Dewasa -</option>
+									<option value="0">- Adult(s) -</option>
 									@for($i= 1;$i <= $transaksi->kamar->max_dewasa;$i++)
-									<option value="{{$i}}">{{$i}} Orang</option>
+									<option value="{{$i}}">{{$i}} person(s)</option>
 									@endfor
 								</select>
 							</div>
 							<div class="col-sm-6">
 								<select class="form-control" name="jumlah_anak" v-model="dataInput.jumlah_anak">
-									<option value="0">- Anak-anak -</option>
+									<option value="0">- Children -</option>
 									@for($i= 1;$i <= $transaksi->kamar->max_anak;$i++)
-									<option value="{{$i}}">{{$i}} Orang</option>
+									<option value="{{$i}}">{{$i}} persons</option>
 									@endfor
 								</select>
 							</div>
 						</div>
 					</div>
 					<div class="form-group">
-						<label>Tanggal / Waktu Check-In</label>
+						<label>Date / Time of Check-In</label>
 						<div class="row">
 							<div class="col-sm-6">
 								<input class="form-control" name="tgl_checkin" value="{{date('Y-m-d')}}" readonly="" v-model="dataInput.tgl_checkin">
@@ -72,7 +72,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label>Tanggal / Waktu Check-Out</label>
+						<label>Date / Time of Check-Out</label>
 						<div class="row">
 							<div class="col-sm-6">
 								<input id="checkout" class="form-control" name="tgl_checkout" data-date-format="yyyy-mm-dd" v-model="dataInput.tgl_checkout" readonly>
@@ -83,7 +83,7 @@
 						</div>
 					</div>
 					<div class="form-group">
-						<label>Jumlah Deposit (Rp)</label>
+						<label> Deposit</label>
 						<input type="number" class="form-control" name="deposit" v-model="dataInput.deposit">
 					</div>
 				</div>
@@ -91,8 +91,8 @@
 		</div>
 		<div class="box-footer">
 			<input type="hidden" name="kamar_id" v-model="dataInput.kamar_id">
-			<button class="btn btn-success" type="submit" name="checkin">Ubah</button>
-			<a class="btn btn-warning" href="{{route('checkin.index')}}">Batal</a>
+			<button class="btn btn-success" type="submit" name="checkin">Submit</button>
+			<a class="btn btn-warning" href="{{route('checkin.index')}}">Cancel</a>
 		</div>
 	</form>
 </div>

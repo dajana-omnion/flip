@@ -5,7 +5,7 @@
 @section('content')
 <div class="box" id="checkin">
 	<div class="box-header">
-		<h3 class="box-title">KAMAR NOMOR : <b>{{$transaksi->nomor_kamar}}</b></h3>
+		<h3 class="box-title">Room number : <b>{{$transaksi->nomor_kamar}}</b></h3>
 	</div>
 	<form method="POST" enctype="multipart/form-data" v-on:submit.prevent="ubahCheckin({!!$transaksi->id!!})">
 		<div class="box-body">

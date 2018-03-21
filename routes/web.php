@@ -58,7 +58,7 @@ Route::group(['middleware' => ['auth'],'prefix' => 'Admin','namespace' => 'Admin
 
 Route::group(['middleware' => 'auth','prefix' => 'api','namespace' => 'Admin'], function () {
 	Route::get('kamar','KamarCtrl@getKamar')->name('laporan.kamar');
-    Route::get('typekamar','typeKamarCtrl@getTypeKamar')->name('api.typekamar');
+    Route::get('typekamar','typeKamarCtrl@getTypeKamar')->name('backend.typekamar');
     Route::get('kategorilayanan','layananKategoriCtrl@getLayananKategori')->name('api.layanankategori');
 	Route::get('layanan','LayananCtrl@getLayanan')->name('api.layanan');
     Route::get('tamu','TamuCtrl@getTamu')->name('api.tamu');

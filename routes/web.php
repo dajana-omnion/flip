@@ -54,11 +54,10 @@ Route::group(['middleware' => ['auth'],'prefix' => 'Admin','namespace' => 'Admin
     Route::post('checkout','CheckinCtrl@checkoutsave')->name('checkin.checkoutsave');
 
     Route::get('laporan/{type}','LaporanCtrl@laporan')->name('laporan')->middleware('role');
-    Route::get('kamar','KamarCtrl@getKamar')->name('laporan.kamar.blade');
 });
 
 Route::group(['middleware' => 'auth','prefix' => 'api','namespace' => 'Admin'], function () {
-	
+	Route::get('kamar','KamarCtrl@getKamar')->name('laporan.kamar');
     Route::get('typekamar','typeKamarCtrl@getTypeKamar')->name('api.typekamar');
     Route::get('kategorilayanan','layananKategoriCtrl@getLayananKategori')->name('api.layanankategori');
 	Route::get('layanan','LayananCtrl@getLayanan')->name('api.layanan');

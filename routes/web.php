@@ -54,7 +54,7 @@ Route::group(['middleware' => ['auth'],'prefix' => 'Admin','namespace' => 'Admin
     Route::post('checkout','CheckinCtrl@checkoutsave')->name('checkin.checkoutsave');
 
     Route::get('laporan/{type}','LaporanCtrl@laporan')->name('laporan')->middleware('role');
-    Route::get('kamar','KamarCtrl@getKamar')->name('laporan.kamar');
+    Route::get('kamar','KamarCtrl@getKamar')->name('laporan.kamar.blade');
 });
 
 Route::group(['middleware' => 'auth','prefix' => 'api','namespace' => 'Admin'], function () {
